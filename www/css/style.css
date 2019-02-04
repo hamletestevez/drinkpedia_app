@@ -1,1 +1,106 @@
-/* Empty. Add your own CSS if you like */
+.platform-ios .manual-ios-statusbar-padding {
+  padding-top: 20px; }
+
+.manual-remove-top-padding {
+  padding-top: 0px; }
+
+.manual-remove-top-padding .scroll {
+  padding-top: 0px !important; }
+
+ion-list.manual-list-fullwidth div.list,
+.list.card.manual-card-fullwidth {
+  margin-left: -10px;
+  margin-right: -10px; }
+
+ion-list.manual-list-fullwidth div.list > .item,
+.list.card.manual-card-fullwidth > .item {
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px; }
+
+.show-list-numbers-and-dots ul {
+  list-style-type: disc;
+  padding-left: 40px; }
+
+.show-list-numbers-and-dots ol {
+  list-style-type: decimal;
+  padding-left: 40px; }
+
+* {
+  font-family: 'Quicksand', sans-serif !important; }
+
+.spacer {
+  width: auto;
+  clear: both; }
+  .spacer.sm {
+    height: 15px; }
+  .spacer.md {
+    height: 30px; }
+  .spacer.lg {
+    height: 60px; }
+
+.customHeader {
+  color: #444444; }
+
+.customItem {
+  border-left: none;
+  border-right: none;
+  white-space: normal;
+  padding: 8px; }
+  .customItem img {
+    float: left;
+    padding: 5px;
+    height: 125px; }
+  .customItem .itemDescriptionBlock {
+    width: 75%;
+    float: left;
+    padding: 10px; }
+    .customItem .itemDescriptionBlock h3 {
+      margin-bottom: 5px;
+      color: #444444;
+      font-size: 20px; }
+  .customItem .itemInfoBlock {
+    padding: 5px;
+    display: flex;
+    flex-direction: row; }
+  .customItem .ActionsBlock {
+    float: left;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center; }
+    .customItem .ActionsBlock .itemSelectQuantity {
+      display: none;
+      width: 100px;
+      color: #fff;
+      text-align: center;
+      padding: 8px; }
+      .customItem .ActionsBlock .itemSelectQuantity select {
+        background-color: transparent;
+        width: 100%;
+        padding: 4px 8px;
+        color: #fff;
+        border: none; }
+    .customItem .ActionsBlock a {
+      width: 75px; }
+
+.subHeaderSearchBar {
+  padding: 8px;
+  width: 100%;
+  border: none; }
+
+.activeItem {
+  background-color: #f7931e; }
+  .activeItem .itemImageBlock {
+    background-color: #fff;
+    border-radius: 10px; }
+  .activeItem .itemDescriptionBlock h3,
+  .activeItem .itemDescriptionBlock p,
+  .activeItem .itemDescriptionBlock e {
+    color: #fff; }
+  .activeItem .itemDescriptionBlock h3 {
+    letter-spacing: 1px; }
+
+/*# sourceMappingURL=style.css.map */

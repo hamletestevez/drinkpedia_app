@@ -1,9 +1,9 @@
 angular.module('app.services', [])
 
-.factory('BlankFactory', [function(){
+.factory("productList",function($firebaseArray) {
+    // create a reference to the database where we will store our data
+    var ref = firebase.database().ref('/products/');
 
-}])
-
-.service('BlankService', [function(){
-
-}]);
+    return $firebaseArray(ref);
+  }
+);

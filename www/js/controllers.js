@@ -1,56 +1,62 @@
 angular.module('app.controllers', [])
-  
 
-   
-.controller('loginCtrl', function ($scope, $stateParams) {
 
-// END of loginCtrl
-})
-   
-.controller('crearCuentaCtrl', function ($scope, $stateParams) {
 
-// END of crearCuentaCtrl
-})
-   
-.controller('mapaDeCuentaCtrl', function ($scope, $stateParams) {
+  .controller('loginCtrl', function ($scope, $stateParams) {
 
-// END of mapaDeCuentaCtrl
-})
+    // END of loginCtrl
+  })
 
-.controller('menuCtrl', function ($scope, $stateParams) {
+  .controller('crearCuentaCtrl', function ($scope, $stateParams) {
 
-// END of menuCtrl
-})
+    // END of crearCuentaCtrl
+  })
 
-.controller('homeCtrl', function ($scope, $stateParams) {
+  .controller('mapaDeCuentaCtrl', function ($scope, $stateParams) {
 
-// END of homeCtrl
-})
-   
-.controller('tiendaCtrl', function ($scope, $stateParams) {
+    // END of mapaDeCuentaCtrl
+  })
 
-// END of tiendaCtrl
-})
-   
-.controller('ordenesCtrl', function ($scope, $stateParams) {
+  .controller('menuCtrl', function ($scope, $stateParams) {
 
-// END of ordenesCtrl
-})
-   
-.controller('carritoCtrl', function ($scope, $stateParams) {
+    // END of menuCtrl
+  })
 
-// END of carritoCtrl
-})
-   
-.controller('usuarioCtrl', function ($scope, $stateParams) {
+  .controller('homeCtrl', function ($scope, $stateParams) {
 
-// END of usuarioCtrl
-})
-   
-.controller('ajustesCtrl', function ($scope, $stateParams) {
+    // END of homeCtrl
+  })
 
-// END of ajustesCtrl
-})
-   
+  .controller('tiendaCtrl', function ($scope, $stateParams, productList) {
 
- 
+    $scope.productList = productList;
+
+    $scope.selectProductItemCTA = (item) => {
+
+      helper.animate.itemListSelect(item.id)
+
+    }
+    // select product item from list
+
+    // END of tiendaCtrl
+  })
+
+  .controller('ordenesCtrl', function ($scope, $stateParams) {
+
+    // END of ordenesCtrl
+  })
+
+  .controller('carritoCtrl', function ($scope, $stateParams) {
+
+    // END of carritoCtrl
+  })
+
+  .controller('usuarioCtrl', function ($scope, $stateParams) {
+
+    // END of usuarioCtrl
+  })
+
+  .controller('ajustesCtrl', function ($scope, $stateParams) {
+
+    // END of ajustesCtrl
+  })

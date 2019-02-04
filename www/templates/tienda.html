@@ -2,15 +2,43 @@
   <ion-nav-buttons side="right" class="has-header">
     <button class="button button-icon icon ion-ios-cart-outline"></button>
   </ion-nav-buttons>
-  <ion-content padding="true" class="has-header">
-    <ion-list id="tienda-list5">
-      <label class="item item-input" id="tienda-search1">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="search" placeholder="">
-      </label>
-      <ion-item id="tienda-list-item19">Item 1</ion-item>
-      <ion-item id="tienda-list-item20">Item 2</ion-item>
-      <ion-item id="tienda-list-item21">Item 3</ion-item>
+  <div class="bar bar-subheader">
+    <label class="item item-input subHeaderSearchBar">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" placeholder="Busqueda..." ng-model="searchStoreInput">
+    </label>
+  </div>
+
+  <ion-content padding="true" class="has-header has-subheader">
+
+    <ion-list>
+      <ion-item class="customItem" ng-repeat="item in productList | filter: searchStoreInput" id="{{item.id}}">
+        <div class="itemInfoBlock" ng-click="selectProductItemCTA(item)">
+          <div class="itemImageBlock"><img ng-src="{{item.imageUrl}}"></div>
+          <div class="itemDescriptionBlock">
+            <h3>{{item.name}}</h3>
+            <p>{{item.desription}}</p>
+            <e>RD$ {{item.price}}</e>
+          </div>
+        </div>
+        <div class="ActionsBlock">
+          <div class="itemSelectQuantity">
+              <e >Cantidad</e>
+              <select>
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+          </div>
+         
+          <a class="button button-balanzed button-small shareItemBtn">Compartir</a>
+          <a class="button button-positive button-small">Carrito</a>
+
+        </div>
+
+      </ion-item>
+      <div class="spacer md"></div>
+
     </ion-list>
   </ion-content>
 </ion-view>
