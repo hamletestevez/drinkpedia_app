@@ -27,15 +27,37 @@ angular.module('app.controllers', [])
     // END of homeCtrl
   })
 
-  .controller('tiendaCtrl', function ($scope, $stateParams, productList) {
+  .controller('tiendaCtrl', function ($scope, $stateParams, productList, productCartList, $timeout, $state) {
 
     $scope.productList = productList;
+    $scope.productCartList = productCartList;
+
 
     $scope.selectProductItemCTA = (item) => {
 
       helper.animate.itemListSelect(item.id)
 
     }
+
+    $scope.addItemToCartCTA = (item) => {
+      //   console.log(item);
+      helper.animate.itemListSelect(item.id)
+      helper.saveLocal.saveToCart(item).then((result) => {
+        // console.log('done');
+        $timeout(() => {
+          $scope.productCartList = result;
+          //   console.log($scope.productCartList);
+
+        }, 250)
+      })
+
+    }
+
+    $scope.goToCartCTA = ()=>{
+    $state.go('menu.carrito')
+    }
+
+
     // select product item from list
 
     // END of tiendaCtrl
@@ -46,7 +68,10 @@ angular.module('app.controllers', [])
     // END of ordenesCtrl
   })
 
-  .controller('carritoCtrl', function ($scope, $stateParams) {
+  .controller('carritoCtrl', function ($scope, $stateParams, productCartList) {
+
+    $scope.productCartList = productCartList;
+    console.log($scope.productCartList);
 
     // END of carritoCtrl
   })

@@ -1,9 +1,20 @@
 <ion-view title="Carrito" id="page4">
   <ion-content padding="true" class="has-header">
     <ion-list id="carrito-list7">
-      <ion-item id="carrito-list-item31">Item 1</ion-item>
-      <ion-item id="carrito-list-item32">Item 2</ion-item>
-      <ion-item id="carrito-list-item33">Item 3</ion-item>
+      <ion-item class="customItem" ng-repeat="item in productCartList">
+
+
+        <div class="cartItemBlock">
+          <span>{{item.name}}</span>
+          <span>X {{item.selectedQuantity ? item.selectedQuantity: 1}}</span>
+
+        </div>
+        <div class="cartItemBlock">
+          <span> RD$ {{item.price}}</span>
+          <span> RD$ {{item.itemTotal}}</span>
+        </div>
+      </ion-item>
+
     </ion-list>
   </ion-content>
 </ion-view>

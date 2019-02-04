@@ -48,5 +48,37 @@ var helper = {
 
 
     }
+  },
+
+  saveLocal: {
+    saveToCart: (item) => {
+      //   console.log(item);
+      return new Promise((resolve, reject) => {
+        var l = JSON.parse(localStorage.getItem('drinkpedia_cart'));
+        var obj = {
+          name: item.name,
+          id: item.id,
+          description: item.desription,
+          price: item.price
+        }
+        if (item.selectedQuantity) {
+          obj.selectedQuantity = parseInt(item.selectedQuantity);
+          obj.itemTotal = parseInt(item.selectedQuantity) * item.price;
+        }
+        //   console.log(obj);
+        if (l) {
+          l.push(obj);
+          localStorage.setItem('drinkpedia_cart', JSON.stringify(l));
+          resolve(l)
+        } else {
+          var e = [];
+          e.push(obj)
+          localStorage.setItem('drinkpedia_cart', JSON.stringify(e));
+          resolve(e)
+        }
+
+      })
+
+    }
   }
 }

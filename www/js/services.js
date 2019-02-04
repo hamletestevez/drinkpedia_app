@@ -6,4 +6,11 @@ angular.module('app.services', [])
 
     return $firebaseArray(ref);
   }
+)
+
+.factory("productCartList",function() {
+    // create a reference to the database where we will store our data
+   
+    return JSON.parse(localStorage.getItem('drinkpedia_cart')) ? JSON.parse(localStorage.getItem('drinkpedia_cart')) : []
+  }
 );

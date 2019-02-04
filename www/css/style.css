@@ -45,15 +45,16 @@ ion-list.manual-list-fullwidth div.list > .item,
   top: -10%;
   left: 35%;
   padding: 5px;
-  background-color: red;
+  background-color: #ef473a;
   z-index: 999999;
   border: 2px solid #fff;
-  width: 20px;
+  width: auto;
+  min-width: 20px;
   height: 20px;
   border-radius: 10px;
   font-size: 10px;
   text-align: center;
-  line-height: 5px;
+  line-height: 7px;
   color: #fff;
   font-weight: 700; }
 
@@ -66,7 +67,7 @@ ion-list.manual-list-fullwidth div.list > .item,
 .customItem {
   border-left: none;
   border-right: none;
-  white-space: normal;
+  white-space: normal !important;
   padding: 8px; }
   .customItem img {
     float: left;
@@ -119,14 +120,21 @@ ion-list.manual-list-fullwidth div.list > .item,
   .activeItem .itemImageBlock {
     background-color: #fff;
     border-radius: 10px; }
-  .activeItem .itemDescriptionBlock h3,
   .activeItem .itemDescriptionBlock p,
+  .activeItem .itemDescriptionBlock h4,
   .activeItem .itemDescriptionBlock e {
-    color: #fff; }
+    color: #fff;
+    font-size: 14px; }
   .activeItem .itemDescriptionBlock h3 {
+    color: #fff;
     letter-spacing: 1px; }
 
 .customHeaderButtons {
   margin-right: 5px; }
+
+.cartItemBlock {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px; }
 
 /*# sourceMappingURL=style.css.map */
