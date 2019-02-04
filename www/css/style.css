@@ -39,6 +39,27 @@ ion-list.manual-list-fullwidth div.list > .item,
   .spacer.lg {
     height: 60px; }
 
+.elementBadge {
+  display: block;
+  position: absolute;
+  top: -10%;
+  left: 35%;
+  padding: 5px;
+  background-color: red;
+  z-index: 999999;
+  border: 2px solid #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  font-size: 10px;
+  text-align: center;
+  line-height: 5px;
+  color: #fff;
+  font-weight: 700; }
+
+.ion-ios-cart-outline::before {
+  font-size: 40px !important; }
+
 .customHeader {
   color: #444444; }
 
@@ -92,7 +113,9 @@ ion-list.manual-list-fullwidth div.list > .item,
   border: none; }
 
 .activeItem {
-  background-color: #f7931e; }
+  background-color: #f7931e;
+  border-radius: 10px;
+  border-color: #fff; }
   .activeItem .itemImageBlock {
     background-color: #fff;
     border-radius: 10px; }
@@ -102,5 +125,8 @@ ion-list.manual-list-fullwidth div.list > .item,
     color: #fff; }
   .activeItem .itemDescriptionBlock h3 {
     letter-spacing: 1px; }
+
+.customHeaderButtons {
+  margin-right: 5px; }
 
 /*# sourceMappingURL=style.css.map */
