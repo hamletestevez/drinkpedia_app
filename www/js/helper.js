@@ -1,4 +1,5 @@
 var helper = {
+  
   animate: {
     itemListSelect: (element) => {
       TweenMax.to(".customItem img", 0.25, {
@@ -11,7 +12,7 @@ var helper = {
       $(".customItem .shareItemBtn").show();
 
       var has = $("#" + element).hasClass('activeItem');
-      console.log(has);
+      // console.log(has);
       if (has) {
         $("#" + element + " .itemSelectQuantity").hide();
         $("#" + element + " .shareItemBtn").show();
@@ -47,7 +48,10 @@ var helper = {
 
 
 
-    }
+    },
+    // menuItemAnimate:(item)=>{
+    // $('#' + item + " a").css
+    // }
   },
 
   saveLocal: {
@@ -59,12 +63,11 @@ var helper = {
           name: item.name,
           id: item.id,
           description: item.desription,
-          price: item.price
+          price: item.price,
+          selectedQuantity: item.selectedQuantity ? parseInt(item.selectedQuantity) : 1,
+          itemTotal: (item.selectedQuantity ? parseInt(item.selectedQuantity) : 1) * item.price
         }
-        if (item.selectedQuantity) {
-          obj.selectedQuantity = parseInt(item.selectedQuantity);
-          obj.itemTotal = parseInt(item.selectedQuantity) * item.price;
-        }
+
         //   console.log(obj);
         if (l) {
           l.push(obj);
@@ -79,6 +82,16 @@ var helper = {
 
       })
 
+    },
+    getLocalCart: () => {
+      return JSON.parse(localStorage.getItem('drinkpedia_cart'));
+    },
+    clearLocalCart: () => {
+      return new Promise((resolve, reject) => {
+        localStorage.removeItem('drinkpedia_cart')
+        resolve()
+
+      })
     }
   }
 }

@@ -57,6 +57,7 @@ ion-list.manual-list-fullwidth div.list>.item,
 
 
 $liveColor: #f7931e;
+$liveDarkerColor:#B46B16;
 $darkColor: #444444;
 $hotcolor: #ef473a;
 
@@ -87,6 +88,24 @@ $hotcolor: #ef473a;
 
 .ion-ios-cart-outline::before {
   font-size: 40px !important;
+}
+
+.bar-header {
+  background-color: #fff !important;
+  border: none;
+}
+
+.side-menu-left {
+  .item {
+    border: none;
+  }
+}
+
+.customMenuButton {
+  color: $liveColor !important;
+
+
+
 }
 
 // Start Home css
@@ -136,27 +155,6 @@ $hotcolor: #ef473a;
 
   .ActionsBlock {
 
-    .itemSelectQuantity {
-      display: none;
-      width: 100px;
-
-
-      //   border-bottom: 1px solid #ccc;
-      color: #fff;
-      text-align: center;
-      padding: 8px;
-
-      select {
-        background-color: transparent;
-        width: 100%;
-        padding: 4px 8px;
-        color: #fff;
-        border: none;
-      }
-    }
-
-
-
     float: left;
     padding: 10px;
     // background-color: lightgreen;
@@ -165,6 +163,10 @@ $hotcolor: #ef473a;
     width: 100%;
     justify-content: space-around;
     align-items: center;
+
+    .itemSelectQuantity {
+      display: none;
+    }
 
     a {
       width: 75px;
@@ -178,8 +180,12 @@ $hotcolor: #ef473a;
   border: none;
 }
 
-.activeItem {
+.elevetion {
+  box-shadow: #999 1px 1px 4px 0.5px;
+}
 
+
+.activeItem {
 
   background-color: $liveColor;
   border-radius: 10px;
@@ -188,10 +194,10 @@ $hotcolor: #ef473a;
   .itemImageBlock {
     background-color: #fff;
     border-radius: 10px;
+    @extend .elevetion;
   }
 
   .itemDescriptionBlock {
-
 
     p,
     h4,
@@ -211,13 +217,67 @@ $hotcolor: #ef473a;
   margin-right: 5px;
 }
 
+.customSelectPopup {
+  .popup {
+    background-color: #fff;
+
+    .popup-head,
+    .popup-buttons {
+      flex-direction: column;
+      padding: 0px 10px;
+
+      button {
+        margin-top: -1px;
+        margin-bottom: 0px;
+        border: 1px solid #ccc;
+        border-left: none;
+        border-right: none;
+      }
+    }
+  }
+}
+
 // END of Tienda css
 // Start cart css
-.cartItemBlock{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
+.cartItemBlock {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
 
 }
 
+.customCartItem {
+  border-bottom-color: $liveColor;
+  border-top-color: $liveColor;
+
+}
+
+.customCartItemTotal {
+  border-bottom-width: 2px;
+  border-top-width: 2px;
+}
+
+.noItemsLabel {
+  color: #ccc;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 25px;
+}
+
 // END of cart css
+
+.customHeaderClass {
+  background-color: $liveColor;
+
+  .bar-stable,
+  .item,
+  a {
+    background-color: transparent !important;
+    color: #fff;
+
+    img {
+      width: 100%;
+    }
+  }
+
+}

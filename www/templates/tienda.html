@@ -25,21 +25,15 @@
             <h3>{{item.name}}</h3>
             <p>{{item.desription}}</p>
             <h4>RD$ {{item.price}}</h4>
-            
+
           </div>
         </div>
         <div class="ActionsBlock">
-          <div class="itemSelectQuantity">
-            <e>Cantidad</e>
-            <select ng-model="quantityChange" ng-change="item.selectedQuantity = quantityChange">
-              <option selected>1</option>
-              <option>2</option>
-              <option>3</option>
-            </select>
-          </div>
 
-          <a class="button button-balanzed button-small shareItemBtn">Compartir</a>
-          <a class="button button-positive button-small" ng-click="addItemToCartCTA(item)">Carrito</a>
+          <a class="itemSelectQuantity button button-stable button-small elevetion" ng-click="addQuantityCTA(item)">Cantidad</a>
+
+          <a class="button button-balanzed button-small shareItemBtn elevetion">Compartir</a>
+          <a class="button button-positive button-small elevetion" ng-click="addItemToCartCTA(item)">Carrito</a>
 
         </div>
 

@@ -61,6 +61,16 @@ ion-list.manual-list-fullwidth div.list > .item,
 .ion-ios-cart-outline::before {
   font-size: 40px !important; }
 
+.bar-header {
+  background-color: #fff !important;
+  border: none; }
+
+.side-menu-left .item {
+  border: none; }
+
+.customMenuButton {
+  color: #f7931e !important; }
+
 .customHeader {
   color: #444444; }
 
@@ -94,17 +104,7 @@ ion-list.manual-list-fullwidth div.list > .item,
     justify-content: space-around;
     align-items: center; }
     .customItem .ActionsBlock .itemSelectQuantity {
-      display: none;
-      width: 100px;
-      color: #fff;
-      text-align: center;
-      padding: 8px; }
-      .customItem .ActionsBlock .itemSelectQuantity select {
-        background-color: transparent;
-        width: 100%;
-        padding: 4px 8px;
-        color: #fff;
-        border: none; }
+      display: none; }
     .customItem .ActionsBlock a {
       width: 75px; }
 
@@ -112,6 +112,9 @@ ion-list.manual-list-fullwidth div.list > .item,
   padding: 8px;
   width: 100%;
   border: none; }
+
+.elevetion, .activeItem .itemImageBlock {
+  box-shadow: #999 1px 1px 4px 0.5px; }
 
 .activeItem {
   background-color: #f7931e;
@@ -132,9 +135,47 @@ ion-list.manual-list-fullwidth div.list > .item,
 .customHeaderButtons {
   margin-right: 5px; }
 
+.customSelectPopup .popup {
+  background-color: #fff; }
+  .customSelectPopup .popup .popup-head, .customSelectPopup .popup .popup-buttons {
+    flex-direction: column;
+    padding: 0px 10px; }
+    .customSelectPopup .popup .popup-head button, .customSelectPopup .popup .popup-buttons button {
+      margin-top: -1px;
+      margin-bottom: 0px;
+      border: 1px solid #ccc;
+      border-left: none;
+      border-right: none; }
+
 .cartItemBlock {
   display: flex;
   justify-content: space-between;
   padding: 5px; }
+
+.customCartItem {
+  border-bottom-color: #f7931e;
+  border-top-color: #f7931e; }
+
+.customCartItemTotal {
+  border-bottom-width: 2px;
+  border-top-width: 2px; }
+
+.noItemsLabel {
+  color: #ccc;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 25px; }
+
+.customHeaderClass {
+  background-color: #f7931e; }
+  .customHeaderClass .bar-stable,
+  .customHeaderClass .item,
+  .customHeaderClass a {
+    background-color: transparent !important;
+    color: #fff; }
+    .customHeaderClass .bar-stable img,
+    .customHeaderClass .item img,
+    .customHeaderClass a img {
+      width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

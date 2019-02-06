@@ -1,9 +1,9 @@
 <ion-view title="Carrito" id="page4">
   <ion-content padding="true" class="has-header">
+
+    <h3 class="noItemsLabel" ng-if="!productCartList.length">Ningun producto en el carrito</h3>
     <ion-list id="carrito-list7">
-      <ion-item class="customItem" ng-repeat="item in productCartList">
-
-
+      <ion-item class="customItem customCartItem" ng-repeat="item in productCartList">
         <div class="cartItemBlock">
           <span>{{item.name}}</span>
           <span>X {{item.selectedQuantity ? item.selectedQuantity: 1}}</span>
@@ -14,7 +14,28 @@
           <span> RD$ {{item.itemTotal}}</span>
         </div>
       </ion-item>
+      <ion-item class="customItem customCartItem customCartItemTotal" ng-if="productCartList.length">
+        <div class="cartItemBlock">
+          <span>{{totalProductsDetails.totalProducts}} {{totalProductsDetails.totalProducts > 1 ? 'Productos': 'Producto'}}</span>
+
+
+        </div>
+        <div class="cartItemBlock">
+          <span>Subtotal RD$ {{totalProductsDetails.productTotalValue}}</span>
+
+        </div>
+        <div class="cartItemBlock">
+          <span>Con ITBIS RD$ {{totalProductsDetails.productsTax}}</span>
+
+        </div>
+      </ion-item>
+      <div class="spacer lg"></div>
 
     </ion-list>
   </ion-content>
+  <div class="bar bar-footer">
+    <button class="button button-assertive" ng-click="cancelCartCTA()" ng-if="productCartList.length">Cancelar</button>
+    
+    <button class="button button-positive" ng-if="productCartList.length">Ordenar</button>
+  </div>
 </ion-view>

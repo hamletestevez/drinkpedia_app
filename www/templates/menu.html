@@ -3,22 +3,23 @@
     <ion-nav-bar class="bar-stable">
       <ion-nav-back-button></ion-nav-back-button>
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        <button class="button button-icon button-clear ion-navicon customMenuButton" menu-toggle="left"></button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="side-menu21"></ion-nav-view>
   </ion-side-menu-content>
-  <ion-side-menu side="left" id="side-menu21">
+  <ion-side-menu side="left" class="customHeaderClass">
     <ion-header-bar class="bar-stable">
-      <div class="title">Menu</div>
+      <!-- <div class="title">Menu</div> -->
+      <img src="../img/LogWhite.png">
     </ion-header-bar>
     <ion-content padding="false" class="side-menu-left has-header ">
-      <ion-list id="menu-list1">
-        <ion-item id="menu-list-item1" ui-sref="menu.home()" menu-close="">Home</ion-item>
-        <ion-item id="menu-list-item2" ui-sref="menu.tienda()" menu-close="">Tienda</ion-item>
-        <ion-item id="menu-list-item3" ui-sref="menu.ordenes()" menu-close="">Ordenes</ion-item>
-        <ion-item id="menu-list-item4" ui-sref="menu.carrito()" menu-close="">Carrito</ion-item>
-        <ion-item id="menu-list-item7" ui-sref="menu.ajustes()" menu-close="">Ajustes</ion-item>
+      <ion-list>
+        <ion-item ui-sref="menu.home()" id="homeButton" ng-click="menuOptionAction('homeButton')" menu-close="">Home</ion-item>
+        <ion-item ui-sref="menu.tienda()" id="tiendaButton" ng-click="menuOptionAction('tiendaButton')" menu-close="">Tienda</ion-item>
+        <ion-item ui-sref="menu.ordenes()" id="ordenesButton" ng-click="menuOptionAction('ordenesButton')" menu-close="">Ordenes</ion-item>
+        <ion-item ui-sref="menu.carrito()" id="carritoButton" ng-click="menuOptionAction('carritoButton')" menu-close="">Carrito</ion-item>
+        <ion-item ui-sref="menu.ajustes()" id="ajustesButton" ng-click="menuOptionAction('ajustesButton')" menu-close="">Ajustes</ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>
