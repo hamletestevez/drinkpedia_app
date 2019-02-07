@@ -69,52 +69,43 @@ angular.module('app.controllers', [])
       $state.go('menu.carrito')
     }
 
-    $scope.selectPopupAction = (selectedNumber, item) => {
-      console.log(selectedNumber);
-      console.log(item);
-    }
 
-    $scope.addQuantityCTA = (item) => {
+
+    $scope.selecterPopup = {
+      decress: () => {
+
+        if ($scope.defaultSelectValue <= 1) {
+          $scope.defaultSelectValue = 1
+        } else {
+          $scope.defaultSelectValue = $scope.defaultSelectValue - 1
+        }
+
+      },
+      incress: () => {
+        $scope.defaultSelectValue = $scope.defaultSelectValue + 1
+
+      }
+
+    }
+    $scope.changeSelectInput = (input) => {
+      console.log(input);
+      $scope.defaultSelectValue = input;
+    }
+    $scope.addQuantityCTA = (item, index) => {
+      $scope.defaultSelectValue = 2;
 
       $ionicPopup.show({
         scope: $scope,
-        cssClass: 'customSelectPopup',
+        cssClass: "customSelectPopup",
+        template: "<div><div class='selectIncrementButtons'><a ng-click='selecterPopup.decress()'><i class='button ion-chevron-left button-clear button-dark'></i></a><label class='item item-input'><input type='number' ng-model='defaultSelectValue' ng-change='changeSelectInput(defaultSelectValue)'></label><a ng-click='selecterPopup.incress()'><i class='button ion-chevron-right button-clear button-dark'></i></a></div><div></div></div>",
         buttons: [{
-            text: "2",
-            type: "button-light button-block",
-            onTap: () => {
-              $scope.selectPopupAction(2, item)
-            }
-          },
-          {
-            text: "3",
-            type: "button-light button-block",
-            onTap: () => {
-              $scope.selectPopupAction(3, item)
-            }
-          },
-          {
-            text: "4",
-            type: "button-light button-block",
-            onTap: () => {
-              $scope.selectPopupAction(4, item)
-            }
-          },
-          {
-            text: "5",
-            type: "button-light button-block",
-            onTap: () => {
-              $scope.selectPopupAction(5, item)
-            }
-          },
-          {
-            text: "mas de 5",
-            type: "button-light button-block",
-            onTap: () => {
-              $scope.selectPopupAction('more', item)
-            }
+          text: "Select",
+          type:"button-light",
+          onTap: () => {
+            console.log($scope.defaultSelectValue);
+            $scope.productList[index].selectedQuantity = $scope.defaultSelectValue;
           }
-        ]
+        }]
       })
     }
 
@@ -136,14 +127,16 @@ angular.module('app.controllers', [])
     $scope.$on("$ionicView.enter", function (event, data) {
       $scope.productCartList = helper.saveLocal.getLocalCart();
 
-      var v = 0
+      var v = 0;
+      var q = 0;
       for (var i = 0; $scope.productCartList.length > i; i++) {
         v = $scope.productCartList[i].itemTotal + v;
+        q = $scope.productCartList[i].selectedQuantity + q;
 
       };
       var it = ((v * 18) / 100) + v;
       $scope.totalProductsDetails = {
-        totalProducts: $scope.productCartList.length,
+        totalProducts: q,
         productTotalValue: v,
         productsTax: it
 

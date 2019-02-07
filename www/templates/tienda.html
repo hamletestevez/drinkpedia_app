@@ -30,7 +30,7 @@
         </div>
         <div class="ActionsBlock">
 
-          <a class="itemSelectQuantity button button-stable button-small elevetion" ng-click="addQuantityCTA(item)">Cantidad</a>
+          <a class="itemSelectQuantity button button-stable button-small elevetion" ng-click="addQuantityCTA(item, $index)">{{item.selectedQuantity ? item.selectedQuantity : 'Cantidad'}}</a>
 
           <a class="button button-balanzed button-small shareItemBtn elevetion">Compartir</a>
           <a class="button button-positive button-small elevetion" ng-click="addItemToCartCTA(item)">Carrito</a>

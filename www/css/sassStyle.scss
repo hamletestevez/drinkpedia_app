@@ -281,3 +281,13 @@ $hotcolor: #ef473a;
   }
 
 }
+
+.selectIncrementButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  input {
+    text-align: center;
+  }
+}

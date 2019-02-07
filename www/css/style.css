@@ -137,10 +137,12 @@ ion-list.manual-list-fullwidth div.list > .item,
 
 .customSelectPopup .popup {
   background-color: #fff; }
-  .customSelectPopup .popup .popup-head, .customSelectPopup .popup .popup-buttons {
+  .customSelectPopup .popup .popup-head,
+  .customSelectPopup .popup .popup-buttons {
     flex-direction: column;
     padding: 0px 10px; }
-    .customSelectPopup .popup .popup-head button, .customSelectPopup .popup .popup-buttons button {
+    .customSelectPopup .popup .popup-head button,
+    .customSelectPopup .popup .popup-buttons button {
       margin-top: -1px;
       margin-bottom: 0px;
       border: 1px solid #ccc;
@@ -177,5 +179,12 @@ ion-list.manual-list-fullwidth div.list > .item,
     .customHeaderClass .item img,
     .customHeaderClass a img {
       width: 100%; }
+
+.selectIncrementButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .selectIncrementButtons input {
+    text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
