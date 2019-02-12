@@ -187,4 +187,32 @@ ion-list.manual-list-fullwidth div.list > .item,
   .selectIncrementButtons input {
     text-align: center; }
 
+#logInPage {
+  background-image: url("../img/LoginBackGround.png"); }
+  #logInPage .scroll {
+    display: flex;
+    flex-direction: column; }
+  #logInPage input[type=email],
+  #logInPage input[type=password] {
+    color: #ccc;
+    letter-spacing: 0.5px; }
+  #logInPage .logInForm img {
+    width: 100%; }
+  #logInPage .logInForm label {
+    border: none; }
+
+#logInPageFooter {
+  background-color: transparent;
+  background-image: none; }
+  #logInPageFooter #logInCreateCTA {
+    float: right;
+    color: #f7931e; }
+  #logInPageFooter #logInCTA {
+    float: left;
+    color: #cccccc; }
+  #logInPageFooter a {
+    font-weight: 700;
+    margin: 0 5px;
+    max-width: 150px; }
+
 /*# sourceMappingURL=style.css.map */

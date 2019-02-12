@@ -4,6 +4,20 @@ angular.module('app.controllers', [])
 
   .controller('loginCtrl', function ($scope, $stateParams) {
 
+    $scope.logInData = {};
+    $scope.logInputFocus = () => {
+      helper.animate.logInputFocusAnimation();
+    }
+    $scope.logBlurInput = () => {
+      helper.animate.logInputBlurAnimation();
+    }
+    $scope.logInCTA = () => {
+      console.log( $scope.logInData);
+    }
+
+    $scope.inputLogChange = (inputLogChange) => {
+      console.log(inputLogChange);
+    }
     // END of loginCtrl
   })
 
@@ -100,7 +114,7 @@ angular.module('app.controllers', [])
         template: "<div><div class='selectIncrementButtons'><a ng-click='selecterPopup.decress()'><i class='button ion-chevron-left button-clear button-dark'></i></a><label class='item item-input'><input type='number' ng-model='defaultSelectValue' ng-change='changeSelectInput(defaultSelectValue)'></label><a ng-click='selecterPopup.incress()'><i class='button ion-chevron-right button-clear button-dark'></i></a></div><div></div></div>",
         buttons: [{
           text: "Select",
-          type:"button-light",
+          type: "button-light",
           onTap: () => {
             console.log($scope.defaultSelectValue);
             $scope.productList[index].selectedQuantity = $scope.defaultSelectValue;
@@ -177,7 +191,29 @@ angular.module('app.controllers', [])
     // END of usuarioCtrl
   })
 
-  .controller('ajustesCtrl', function ($scope, $stateParams) {
+  .controller('ajustesCtrl', function ($scope, $stateParams, $ionicPopup, $state, $ionicLoading, $timeout) {
 
+    $scope.logOutCTA = () => {
+      $ionicPopup.show({
+        title: "Salir",
+        template: "Esta Seguro Que quiere Salir",
+        buttons: [{
+          text: "Cancel"
+        }, {
+          text: "Salir",
+          type: "button-assertive",
+          onTap: () => {
+            console.log('salir');
+            $ionicLoading.show({
+              template: "<ion-spinner></ion-spinner>",
+              duration: 2500
+            })
+            $timeout(() => {
+              $state.go('login')
+            }, 2500)
+          }
+        }]
+      })
+    }
     // END of ajustesCtrl
   })

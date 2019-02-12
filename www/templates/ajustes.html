@@ -1,21 +1,24 @@
-<ion-view title="Ajustes" id="page12">
+<ion-view title="Ajustes">
   <ion-content padding="true" class="has-header">
-    <div class="list card" id="ajustes-card24">
-      <ion-item id="ajustes-list-item44">Item</ion-item>
-      <div class="item item-body" id="ajustes-list-item-container7">
-        <div id="ajustes-markdown9" class="show-list-numbers-and-dots">
+    <div class="list card">
+      <ion-item>Item</ion-item>
+      <div class="item item-body">
+        <div class="show-list-numbers-and-dots">
           <p style="margin-top:0px;color:#000000;">Some friendly
             <strong>markdown</strong>
           </p>
         </div>
       </div>
     </div>
-    <form id="ajustes-form6" class="list">
-      <ion-toggle toggle-class="toggle-positive" id="ajustes-toggle5">Toggle</ion-toggle>
-      <ion-toggle toggle-class="toggle-positive" id="ajustes-toggle6">Toggle</ion-toggle>
-      <ion-radio id="ajustes-radio4">Radio</ion-radio>
+    <form class="list">
+      <ion-toggle toggle-class="toggle-positive">Toggle</ion-toggle>
+      <ion-toggle toggle-class="toggle-positive">Toggle</ion-toggle>
+      <ion-radio>Radio</ion-radio>
+      <ion-radio>Radio</ion-radio>
     </form>
-    <button id="ajustes-button9" class="button button-positive button-block">Usuario</button>
+
     <button id="ajustes-button10" class="button button-positive button-block">Terminos y condiciones</button>
+    <button class="button button-positive button-block">Usuario</button>
+    <button class="button button-assertive button-clear button-block" ng-click="logOutCTA()">Log Out</button>
   </ion-content>
 </ion-view>

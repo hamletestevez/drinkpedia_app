@@ -1,5 +1,5 @@
 var helper = {
-  
+
   animate: {
     itemListSelect: (element) => {
       TweenMax.to(".customItem img", 0.25, {
@@ -49,9 +49,17 @@ var helper = {
 
 
     },
-    // menuItemAnimate:(item)=>{
-    // $('#' + item + " a").css
-    // }
+    logInputFocusAnimation: () => {
+      TweenMax.to(".logInForm img", 0.25, {
+        scale: 0.75
+      })
+    },
+    logInputBlurAnimation: () => {
+      TweenMax.to(".logInForm img", 0.25, {
+        scale: 1
+      })
+    }
+
   },
 
   saveLocal: {

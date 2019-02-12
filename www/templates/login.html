@@ -1,19 +1,27 @@
-<ion-view title="Login" hide-nav-bar="true" hide-back-button="true" cache-view="false" nav-transition="none" id="page9">
-  <ion-content padding="true" class="manual-ios-statusbar-padding">
-    <form id="login-form1" class="list">
-      <ion-list id="login-list2">
-        <label class="item item-input" id="login-input1">
+<ion-view title="Login" hide-nav-bar="true" hide-back-button="true" cache-view="false" nav-transition="none">
+  <ion-content padding="true" class="manual-ios-statusbar-padding" id="logInPage">
+
+
+    <form class="list logInForm" ng-submit="logInData">
+      <img src="../img/LogWhite.png">
+      <ion-list>
+        <label class="item item-input item-floating-label">
           <span class="input-label">Email</span>
-          <input type="email" placeholder="">
+          <input type="email" placeholder="Email" ng-focus="logInputFocus()" ng-blur="logBlurInput()" ng-change="inputLogChange(logInData)" ng-model="logInData.email">
         </label>
-        <label class="item item-input" id="login-input2">
+        <label class="item item-input item-floating-label">
           <span class="input-label">Password</span>
-          <input type="password" placeholder="">
+          <input type="password" placeholder="Password" ng-focus="logInputFocus()" ng-blur="logBlurInput()" ng-change="inputLogChange(logInData)" ng-model="logInData.password">
         </label>
       </ion-list>
-      <div class="spacer" style="height: 40px;"></div>
-      <button id="login-button1" class="button button-stable button-block">Log in</button>
-      <a href-inappbrowser="/signup" id="login-button2" class="button button-positive button-block button-clear">Or create an account</a>
+
     </form>
+
   </ion-content>
+  <div class="bar bar-footer" id="logInPageFooter">
+
+
+    <a class="button button-assertive button-clear" id="logInCreateCTA">Crear Cuenta</a>
+    <a class="button button-positive button-clear" id="logInCTA" ng-click="logInCTA()">Log In</a>
+  </div>
 </ion-view>

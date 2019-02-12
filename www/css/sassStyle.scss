@@ -59,6 +59,7 @@ ion-list.manual-list-fullwidth div.list>.item,
 $liveColor: #f7931e;
 $liveDarkerColor:#B46B16;
 $darkColor: #444444;
+$lightColor:#cccccc;
 $hotcolor: #ef473a;
 
 // END of variable color
@@ -289,5 +290,56 @@ $hotcolor: #ef473a;
 
   input {
     text-align: center;
+  }
+}
+
+#logInPage {
+  .scroll {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;ss
+  }
+
+  background-image: url('../img/LoginBackGround.png');
+
+  input[type=email],
+  input[type=password] {
+    color: #ccc;
+    letter-spacing: 0.5px;
+
+  }
+
+  .logInForm {
+    // text-align: center;
+
+    img {
+      width: 100%;
+    }
+
+    label {
+      border: none;
+    }
+  }
+}
+
+#logInPageFooter {
+  background-color: transparent;
+  background-image: none;
+
+
+  #logInCreateCTA {
+    float: right;
+    color: $liveColor;
+  }
+
+  #logInCTA {
+    float: left;
+    color: $lightColor;
+  }
+
+  a {
+    font-weight: 700;
+    margin: 0 5px;
+    max-width: 150px;
   }
 }
